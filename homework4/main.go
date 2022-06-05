@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-func insert_sort(numbers []int) []int {
-	if len(numbers) > 2 {
+func insertSort(numbers []int) []int {
+	if len(numbers) > 1 {
 		for idx := 1; idx < len(numbers); idx++ {
 			key := numbers[idx]
 			jdx := idx - 1
@@ -29,20 +29,20 @@ func main() {
 
 	fmt.Print("Введите числа через пробел: ")
 	in := bufio.NewReader(os.Stdin)
-	raw_numbers, _ := in.ReadString('\n')
+	rawNumbers, _ := in.ReadString('\n')
 
-	splited_numbers := strings.Fields(raw_numbers)
-	fmt.Println(splited_numbers)
+	splitedNumbers := strings.Fields(rawNumbers)
+	fmt.Println(splitedNumbers)
 
-	for _, str_number := range splited_numbers {
-		number, err := strconv.Atoi(str_number)
+	for _, strNumber := range splitedNumbers {
+		number, err := strconv.Atoi(strNumber)
 		if err == nil {
 			numbers = append(numbers, number)
 		}
 
 	}
 
-	numbers = insert_sort(numbers)
+	numbers = insertSort(numbers)
 
 	fmt.Println(numbers)
 
