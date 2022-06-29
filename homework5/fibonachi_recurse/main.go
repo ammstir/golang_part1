@@ -18,6 +18,10 @@ func main() {
 	fmt.Print("Введите положительное число: ")
 	fmt.Scanln(&number)
 
+	if number < 0 {
+		panic("Я не умею работать с отрицательными числами")
+	}
+
 	fmt.Printf(
 		"Число фибоначи с номером %d - это %d\n",
 		number,
